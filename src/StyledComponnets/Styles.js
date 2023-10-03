@@ -6,7 +6,8 @@ display:flex;
 align-items:center;
 `
 export const StyledImg = styled.img`
-height:35rem
+height:35rem;
+border-radius:6px
 `
 
 export const StyledContentDiv = styled.div`
@@ -36,8 +37,12 @@ background-color: ${props => props.login ? 'rgb(90, 236, 146)' : ''};
 border-style: solid;
 border-radius:3px;
 color: black;
-text-decoration: none;
 margin: 6px;
+margin: ${props => props.track ? '4rem 47rem' : '6px'};
 padding: 5px;
+`
+export const StyledLogo = styled.img`
 
+    height: 5.2rem;
+    padding: 5px;
 `
