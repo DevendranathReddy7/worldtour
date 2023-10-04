@@ -55,3 +55,13 @@ width:40rem;
 export const StyledAppLayout = styled.div`
 display:flex;
 `
+
+export const StyledLiCities = styled.li`
+background-color:grey;
+margin-bottom:10px;
+list-style:none;
+display:flex;
+padding:15px;
+justify-content:space-between;
+border-radius: 5px
+`
