@@ -7,8 +7,27 @@ import AppLayout from "./components/App/AppLayout"
 import Cities from "./components/App/Cities"
 import Countries from "./components/App/Countries"
 import Map from "./components/App/Map"
+import { useEffect, useState } from "react"
 
 const App = () => {
+  const [cities, setCities] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setIsLoading(true)
+        const res = await fetch('http://localhost:7733/cities')
+        const data = await res.json()
+        setCities(data)
+      } catch {
+        alert('no cities fetched')
+      } finally {
+        setIsLoading(false)
+      }
+
+    }
+    fetchData()
+  }, [])
   return (
     <BrowserRouter>
       <Routes>
@@ -17,9 +36,9 @@ const App = () => {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/app" element={<AppLayout />}>
-          {/* <Route index element={<Cities />} /> */}
-          <Route path="cities" element={<Cities />} />
-          <Route path="countries" element={<Countries />} />
+          <Route index element={<Cities cityList={cities} status={isLoading} />} />
+          <Route path="cities" element={<Cities cityList={cities} status={isLoading} />} />
+          <Route path="countries" element={<Countries cityList={cities} status={isLoading} />} />
           <Route path="map" element={<Map />} />
 
         </Route>

@@ -57,11 +57,25 @@ display:flex;
 `
 
 export const StyledLiCities = styled.li`
+border-left: 6px solid green;
 background-color:grey;
 margin-bottom:10px;
 list-style:none;
 display:flex;
-padding:15px;
+padding:10px;
 justify-content:space-between;
-border-radius: 5px
+border-radius: 5px;
+font-size:13px
+`
+
+export const StyledLiCountries = styled.li`
+border-left: 6px solid orange;
+background-color:grey;
+list-style:none;
+display:inline-flex;
+padding:20px;
+margin:5px ;
+justify-content:space-between;
+border-radius: 5px;
+font-size:13px
 `
