@@ -42,7 +42,16 @@ margin: ${props => props.track ? '4rem 47rem' : '6px'};
 padding: 5px;
 `
 export const StyledLogo = styled.img`
-
     height: 5.2rem;
     padding: 5px;
+`
+export const StyledSideBar = styled.div`
+margin:20px;
+background-color:black;
+padding:10px;
+height:95vh;
+width:40rem;
+`
+export const StyledAppLayout = styled.div`
+display:flex;
 `

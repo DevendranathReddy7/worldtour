@@ -3,6 +3,7 @@ import Homepage from "./components/Homepage"
 import Products from "./components/Products"
 import Pricing from "./components/Pricing"
 import Login from "./components/Login"
+import AppLayout from "./components/App/AppLayout"
 
 const App = () => {
   return (
@@ -12,7 +13,7 @@ const App = () => {
         <Route path='/product' element={<Products />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/app" element={<Login />} />
+        <Route path="/app" element={<AppLayout />} />
       </Routes>
     </BrowserRouter>
   )
