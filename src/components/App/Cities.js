@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { StyledLiCities } from "../../StyledComponnets/Styles"
 import './Cities.css'
 const formatDate = (date) =>
@@ -8,11 +9,13 @@ const formatDate = (date) =>
     }).format(new Date(date))
 
 const Cities = ({ cityList, status }) => {
+
     if (status) return <h3 style={{ color: "white", marginLeft: '13rem', fontSize: '20px' }}>Loading...</h3>
     if (cityList.length === 0) return <h3 style={{ color: "white", marginLeft: '13rem', fontSize: '20px' }}>No Cities Visted yet!</h3>
     return (
         <div>
-            {cityList.map(city => <StyledLiCities key={city.id}>
+            {cityList.map(city => <Link style={{ color: 'black', 'textDecoration': 'none' }} to={`${city.id}`}><StyledLiCities key={city.id}>
+
                 <div className="citiesList">
                     <p className="item">{city.emoji}</p>
                     <p className="item">{city.cityName}</p>
@@ -22,7 +25,8 @@ const Cities = ({ cityList, status }) => {
                     <button className="item btn">&times;</button>
                 </div>
 
-            </StyledLiCities>)
+
+            </StyledLiCities></Link>)
             }
         </div>
     )

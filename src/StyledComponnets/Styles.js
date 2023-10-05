@@ -13,7 +13,6 @@ border-radius:6px
 export const StyledContentDiv = styled.div`
 color:black;
 padding:15px;
-font-size:20px
 `
 export const StyledNavDiv = styled.div`
 display: flex;
@@ -78,4 +77,11 @@ margin:5px ;
 justify-content:space-between;
 border-radius: 5px;
 font-size:13px
+`
+
+export const StyledContainer = styled.div`
+background-color:grey;
+margin:30px;
+border-radius:5px;
+padding:5px
 `
