@@ -4,7 +4,7 @@ import Logo from '../Logo'
 import AppNav from './AppNav'
 const SideBar = () => {
     return (
-        <StyledSideBar>
+        <StyledSideBar sidebar>
             <Logo />
             <AppNav />
             <Outlet />

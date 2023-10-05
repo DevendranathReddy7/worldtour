@@ -45,14 +45,15 @@ export const StyledLogo = styled.img`
     padding: 5px;
 `
 export const StyledSideBar = styled.div`
-margin:20px;
-background-color:black;
+margin:20px 5px;
+background-color:${props => props.sidebar ? 'black' : 'grey'};
 padding:10px;
-height:95vh;
-width:40rem;
+height:86vh;
+width:${props => props.sidebar ? '45rem' : '75rem'};
 `
 export const StyledAppLayout = styled.div`
 display:flex;
+margin:20px;
 `
 
 export const StyledLiCities = styled.li`

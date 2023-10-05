@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 import { StyledLiCities } from "../../StyledComponnets/Styles"
 import './Cities.css'
 const formatDate = (date) =>
@@ -10,11 +10,15 @@ const formatDate = (date) =>
 
 const Cities = ({ cityList, status }) => {
 
+    const [searchParams, setSearchParams] = useSearchParams()
+    const lat = searchParams.get('lat')
+    const lng = searchParams.get('lng')
+
     if (status) return <h3 style={{ color: "white", marginLeft: '13rem', fontSize: '20px' }}>Loading...</h3>
     if (cityList.length === 0) return <h3 style={{ color: "white", marginLeft: '13rem', fontSize: '20px' }}>No Cities Visted yet!</h3>
     return (
         <div>
-            {cityList.map(city => <Link style={{ color: 'black', 'textDecoration': 'none' }} to={`${city.id}`}><StyledLiCities key={city.id}>
+            {cityList.map(city => <Link style={{ color: 'black', 'textDecoration': 'none' }} to={`${city.id}?lat=${city.position.lat}&lng=${city.position.lng}`}><StyledLiCities key={city.id}>
 
                 <div className="citiesList">
                     <p className="item">{city.emoji}</p>
