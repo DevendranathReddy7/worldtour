@@ -8,7 +8,9 @@ const formatDate = (date) =>
         month: 'long',
         year: 'numeric'
     }).format(new Date(date))
+
 const ShowCity = () => {
+
     const { id } = useParams()
     const { getCity, currentCity, isLoading } = useCities()
     const navigate = useNavigate()
@@ -23,7 +25,7 @@ const ShowCity = () => {
                 <h3 htmlFor="cityName">City Name:</h3>
                 <h1 id="cityName">{cityName}</h1>
                 <h3 htmlFor="date">Date when you visted:</h3>
-                <h1 id='date'>{formatDate(date)}</h1>
+                <h1 id='date'>{(date)}</h1>
                 <h3 htmlFor="notes">Your Experience:</h3>
                 <h1 id='notes'>{notes}</h1>
                 <StyledLoginBtn onClick={() => navigate(-1)} > Back</StyledLoginBtn>
