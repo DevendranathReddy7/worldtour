@@ -25,10 +25,11 @@ export const StyledLoginDiv = styled.div`
 display:flex;
 justify-content:space-around;
 color:black;
-margin:15rem 45rem 20rem 45rem;
+margin:15rem 5rem 20rem 45rem;
 border:solid;
 padding:10px;
-border-radius:6px
+border-radius:6px;
+width:40%
 
 `
 export const StyledLoginBtn = styled.button`
